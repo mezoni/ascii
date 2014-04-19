@@ -1,0 +1,5 @@
+name: ascii
+version: 0.0.1
+author: Andrew Mezoni <andrew.mezoni@gmail.com>
+description: Easy access to the ASCII symbols by their names. Also includes information about decimal and hexadecimal codes.
+homepage: https://github.com/mezoni/ascii
