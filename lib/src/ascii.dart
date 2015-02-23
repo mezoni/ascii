@@ -338,13 +338,13 @@ class Ascii {
   static const int LEFT_PARENTHESES = 40;
 
   /**
-   * Rigth parentheses
+   * Right parentheses
    *
    * Symbol: )
    * Dec: 41
    * Hex: 0x29
    */
-  static const int RIGTH_PARENTHESES = 41;
+  static const int RIGHT_PARENTHESES = 41;
 
   /**
    * Asterisk
