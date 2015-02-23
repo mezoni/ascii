@@ -4,6 +4,16 @@ void main() {
   print(result);
 }
 
+class Character {
+  int charCode;
+
+  String description;
+
+  String name;
+
+  Character(this.charCode, this.name, this.description);
+}
+
 class Generator {
   List<List<Character>> _characters;
 
@@ -39,10 +49,30 @@ class Generator {
     _setIdent(1);
 
     // Members
+    // Map
+    var strings = <String>[];
+    for (var i = 32; i < 127; i++) {
+      var key = new String.fromCharCode(i);
+      switch (i) {
+        case 34:
+        case 36:
+        case 92:
+          key = "\\$key";
+          break;
+      }
+
+      var s = "\"$key\": $i";
+      strings.add(s);
+    }
+
+    _writeComment("Map of the printable character codes between \" \" (0x20) and \"~\" (x7e).");
+    _writeLine("  static const Map<String, int> CODES = const<String, int>{${strings.join(", ")}};");
+    _writeLine("");
+    // Characters
     var count = 0;
     for (var i = 0; i < 128; i++) {
       var declarations = _characters[i];
-      if(declarations.isEmpty) {
+      if (declarations.isEmpty) {
         throw new StateError("Undefined character '$i'.");
       }
 
@@ -61,7 +91,7 @@ class Generator {
 
         var dec = charCode.toRadixString(10);
         var hex = charCode.toRadixString(16);
-        if(hex.length == 1) {
+        if (hex.length == 1) {
           hex = "0$hex";
         }
 
@@ -77,7 +107,7 @@ class Generator {
         _write(" = ");
         _write(charCode);
         _writeLine(";");
-        if(i < 127) {
+        if (i < 127) {
           _writeLine("");
         }
       }
@@ -269,15 +299,6 @@ class Generator {
     _sb.write(text);
   }
 
-  void _writeIdent() {
-    var ident = "  " * _ident;
-    _sb.write(ident);
-  }
-
-  void _writeLine(Object text) {
-    _sb.writeln(text);
-  }
-
   void _writeComment(String text) {
     _writeIdent();
     _write("/**");
@@ -294,14 +315,13 @@ class Generator {
     _write(" */");
     _writeLine("");
   }
-}
 
-class Character {
-  int charCode;
+  void _writeIdent() {
+    var ident = "  " * _ident;
+    _sb.write(ident);
+  }
 
-  String description;
-
-  String name;
-
-  Character(this.charCode, this.name, this.description);
+  void _writeLine(Object text) {
+    _sb.writeln(text);
+  }
 }

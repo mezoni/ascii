@@ -32,5 +32,18 @@ void main() {
   }
   if (c == Ascii.DOLLAR_SIGN) {
   }
+
+  // By key in map
+  const ascii = Ascii.CODES;
+  if (c >= ascii["0"] && c <= ascii["9"]) {
+  }
+  if (c >= ascii["A"] && c <= ascii["Z"]) {
+  }
+  if (c == Ascii.ESC) {
+  }
+  if (c == ascii["["]) {
+  }
+  if (c == ascii["\$"]) {
+  }
 }
 ```
