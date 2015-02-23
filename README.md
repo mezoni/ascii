@@ -1,7 +1,7 @@
 ascii
 =====
 
-Easy access to the ASCII symbols by their names.
+Easy access to the ASCII symbols by their names and literals.
 Also includes information about decimal and hexadecimal codes.
 
 ```dart
@@ -33,7 +33,7 @@ void main() {
   if (c == Ascii.DOLLAR_SIGN) {
   }
 
-  // By key in map
+  // By literal
   const ascii = Ascii.CODES;
   if (c >= ascii["0"] && c <= ascii["9"]) {
   }

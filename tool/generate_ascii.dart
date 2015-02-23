@@ -51,6 +51,16 @@ class Generator {
     // Members
     // Map
     var strings = <String>[];
+    for (var i = 0; i < 15; i++) {
+      var s = "\"\\u000${i.toRadixString(16)}\": $i";
+      strings.add(s);
+    }
+
+    for (var i = 16; i < 32; i++) {
+      var s = "\"\\u00${i.toRadixString(16)}\": $i";
+      strings.add(s);
+    }
+
     for (var i = 32; i < 127; i++) {
       var key = new String.fromCharCode(i);
       switch (i) {

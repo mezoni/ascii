@@ -32,7 +32,7 @@ void main() {
   }
   if (c >= ascii["A"] && c <= ascii["Z"]) {
   }
-  if (c == Ascii.ESC) {
+  if (c == ascii["\u001b"]) {
   }
   if (c == ascii["["]) {
   }
