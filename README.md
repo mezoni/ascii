@@ -9,18 +9,6 @@ import "package:ascii/ascii.dart";
 
 void main() {
   var c = 32;
-  // By code
-  if (c >= 48 && c <= 57) {
-  }
-  if (c >= 65 && c <= 90) {
-  }
-  if (c == 27) {
-  }
-  if (c == 91) {
-  }
-  if (c == 36) {
-  }
-
   // By name
   if (c >= Ascii.NUMBER_0 && c <= Ascii.NUMBER_9) {
   }
@@ -33,13 +21,13 @@ void main() {
   if (c == Ascii.DOLLAR_SIGN) {
   }
 
-  // By literal
+  // By key in map
   const ascii = Ascii.CODES;
   if (c >= ascii["0"] && c <= ascii["9"]) {
   }
   if (c >= ascii["A"] && c <= ascii["Z"]) {
   }
-  if (c == Ascii.ESC) {
+  if (c == ascii["\u001b"]) {
   }
   if (c == ascii["["]) {
   }

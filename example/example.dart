@@ -2,18 +2,6 @@ import "package:ascii/ascii.dart";
 
 void main() {
   var c = 32;
-  // By code
-  if (c >= 48 && c <= 57) {
-  }
-  if (c >= 65 && c <= 90) {
-  }
-  if (c == 27) {
-  }
-  if (c == 91) {
-  }
-  if (c == 36) {
-  }
-
   // By name
   if (c >= Ascii.NUMBER_0 && c <= Ascii.NUMBER_9) {
   }
