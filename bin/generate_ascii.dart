@@ -182,7 +182,7 @@ class Generator {
     descriptions.add("Ampersand");
     descriptions.add("Apostrophe");
     descriptions.add("Left parentheses");
-    descriptions.add("Rigth parentheses");
+    descriptions.add("Right parentheses");
     descriptions.add("Asterisk");
     descriptions.add("Plus sign");
     descriptions.add("Comma");
