@@ -21,7 +21,7 @@ void main() {
   if (c == Ascii.DOLLAR_SIGN) {
   }
 
-  // By key in map
+  // By literal
   const ascii = Ascii.CODES;
   if (c >= ascii["0"] && c <= ascii["9"]) {
   }
