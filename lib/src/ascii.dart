@@ -4,7 +4,8 @@ class Ascii {
   /**
    * Map of the printable character codes between " " (0x20) and "~" (x7e).
    */
-  static const Map<String, int> CODES = const <String, int>{
+  // TODO: Use const Map when fixed this bug: www.dartbug.com/7559
+  static final Map<String, int> CODES = new UnmodifiableMapView<String, int>({
     "\u0000": 0,
     "\u0001": 1,
     "\u0002": 2,
@@ -131,7 +132,7 @@ class Ascii {
     "|": 124,
     "}": 125,
     "~": 126
-  };
+  });
 
   /**
    * Null character

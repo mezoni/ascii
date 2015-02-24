@@ -76,7 +76,8 @@ class Generator {
     }
 
     _writeComment("Map of the printable character codes between \" \" (0x20) and \"~\" (x7e).");
-    _writeLine("  static const Map<String, int> CODES = const<String, int>{${strings.join(", ")}};");
+    _writeLine("  // TODO: Use const Map when fixed this bug: www.dartbug.com/7559");
+    _writeLine("  static final Map<String, int> CODES = new UnmodifiableMapView<String, int>({${strings.join(", ")}});");
     _writeLine("");
     // Characters
     var count = 0;

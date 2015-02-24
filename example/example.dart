@@ -15,7 +15,7 @@ void main() {
   }
 
   // By literal
-  const ascii = Ascii.CODES;
+  var ascii = Ascii.CODES;
   if (c >= ascii["0"] && c <= ascii["9"]) {
   }
   if (c >= ascii["A"] && c <= ascii["Z"]) {
